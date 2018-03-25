@@ -9,18 +9,17 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-       <script type="text/javascript">
-           <s:if test="message!=null">
-               alert("<s:property value='message'/>");
-           </s:if>
-           
-           <s:if test="path!=null">
-              document.location.href="<%=path%>/<s:property value='path'/>";
-           </s:if>
-       </script>
+     <script type="text/javascript">
+     </script>
   </head>
-  
+ 
   <body>
+     <s:if test="message!=null">
+         alert("<s:property value='message'/>");
+     </s:if>
+     <s:if test="path!=null">
+        document.location.href="<%=path%>/<s:property value='path'/>";
+     </s:if>
        
   </body>
 </html>

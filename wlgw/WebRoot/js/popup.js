@@ -1,8 +1,8 @@
 var tcolor={
-    cColor:"#EEEEEE", //蒙皮颜色
-    bColor:"#FFFFFF", //背景颜色
-    tColor:"#9C9E9C", //标题背景颜色，边框颜色
-    wColor:"#FFFFFF" //标题文字颜色
+    cColor:"#EEEEEE", //钂欑毊棰滆壊
+    bColor:"#FFFFFF", //鑳屾櫙棰滆壊
+    tColor:"#9C9E9C", //鏍囬鑳屾櫙棰滆壊锛岃竟妗嗛鑹�
+    wColor:"#FFFFFF" //鏍囬鏂囧瓧棰滆壊
    };
 
 function popclose()
@@ -33,11 +33,11 @@ function G(){
 };
 Function.prototype.bind=function(object){
 var __method=this;
-return function(){__method.apply(object,arguments)}
+return function(){__method.apply(object,arguments);}
 };
 Function.prototype.bindAsEventListener=function(object){
 var __method=this;
-return function(event){__method.call(object,event||window.event)}
+return function(event){__method.call(object,event||window.event);}
 };
 Object.extend=function(destination,source){
 for(property in source){destination[property]=source[property]};return destination
@@ -74,33 +74,33 @@ else if(flag=="end"){
 // Popup Class begin....
 var Popup=new Class();
 Popup.prototype={
-iframeIdName:'ifr_popup', //iframe的名字
+iframeIdName:'ifr_popup', //iframe鐨勫悕瀛�
 initialize:function(config){
-   this.config=Object.extend({ //属性设置
-    contentType:1, //pop类型 1. 内嵌iframe，2. 显示给定的html 3. confirm框 4. alert框
-    isHaveTitle:true, //是否有标题栏
-    scrollType:'no', //内嵌iframe是否可以滚动
-    isBackgroundCanClick:false, //背景是否可以点击
-    isSupportDraging:true, //是否支持拖动
-    isShowShadow:true, //是否显示阴影
-    isReloadOnClose:true, //关闭后是否重新加载页面
-    width:400, //宽度
-    height:300 //高度
+   this.config=Object.extend({ //灞炴�璁剧疆
+    contentType:1, //pop绫诲瀷 1. 鍐呭祵iframe锛�. 鏄剧ず缁欏畾鐨刪tml 3. confirm妗�4. alert妗�
+    isHaveTitle:true, //鏄惁鏈夋爣棰樻爮
+    scrollType:'no', //鍐呭祵iframe鏄惁鍙互婊氬姩
+    isBackgroundCanClick:false, //鑳屾櫙鏄惁鍙互鐐瑰嚮
+    isSupportDraging:true, //鏄惁鏀寔鎷栧姩
+    isShowShadow:true, //鏄惁鏄剧ず闃村奖
+    isReloadOnClose:true, //鍏抽棴鍚庢槸鍚﹂噸鏂板姞杞介〉闈�
+    width:400, //瀹藉害
+    height:300 //楂樺害
    },config||{});
-   this.info={ //参数
-    shadowWidth:0, //阴影宽度
-    title:"", //标题
-    contentUrl:"", //iframe的url
-    contentHtml:"", //内容的html
-    callBack:null, //回调函数
-    parameter:null, //调用的参数 如 {id:"divCall",str:"点击确定后显示的字符串",obj:pop}
-    confirmCon:"", //confirm的内容
-    alertCon:"", //alert的内容
-    someHiddenTag:"select,object,embed", //自动隐藏的页面元素
-    someDisabledBtn:"", //禁用的btn
-    someHiddenEle:"", //隐藏的匀速
-    overlay:0, //覆盖
-    coverOpacity:0 //蒙皮不透明度
+   this.info={ //鍙傛暟
+    shadowWidth:0, //闃村奖瀹藉害
+    title:"", //鏍囬
+    contentUrl:"", //iframe鐨剈rl
+    contentHtml:"", //鍐呭鐨刪tml
+    callBack:null, //鍥炶皟鍑芥暟
+    parameter:null, //璋冪敤鐨勫弬鏁�濡�{id:"divCall",str:"鐐瑰嚮纭畾鍚庢樉绀虹殑瀛楃涓�,obj:pop}
+    confirmCon:"", //confirm鐨勫唴瀹�
+    alertCon:"", //alert鐨勫唴瀹�
+    someHiddenTag:"select,object,embed", //鑷姩闅愯棌鐨勯〉闈㈠厓绱�
+    someDisabledBtn:"", //绂佺敤鐨刡tn
+    someHiddenEle:"", //闅愯棌鐨勫寑閫�
+    overlay:0, //瑕嗙洊
+    coverOpacity:0 //钂欑毊涓嶉�鏄庡害
    };
     this.color=tcolor;
     this.dropClass=null;
@@ -110,7 +110,7 @@ initialize:function(config){
      this.config.isSupportDraging=false;
     this.iniBuild()
 },
-setContent:function(arrt,val){ //设置内容，即 this.info 的参数内容
+setContent:function(arrt,val){ //璁剧疆鍐呭锛屽嵆 this.info 鐨勫弬鏁板唴瀹�
    if(val!=''){
     switch(arrt){
      case 'width':this.config.width=val;break;
@@ -129,16 +129,16 @@ setContent:function(arrt,val){ //设置内容，即 this.info 的参数内容
    }
 },
 iniBuild:function(){
-   G('dialogCase')?G('dialogCase').parentNode.removeChild(G('dialogCase')):function(){};
+//   G('dialogCase')?G('dialogCase').parentNode.removeChild(G('dialogCase')):function(){};
    var oDiv=document.createElement('span');oDiv.id='dialogCase';document.body.appendChild(oDiv)
 },
 build:function(){
    var baseZIndex=10001+this.info.overlay*10;
    var showZIndex=baseZIndex+2;this.iframeIdName='ifr_popup'+this.info.overlay;
-   //关闭按钮
+   //鍏抽棴鎸夐挳
    //var path="http://img.baidu.com/hi/img/";
-   //var close='<input type="image" id="dialogBoxClose" src="'+path+'dialogclose.gif" border="0" width="16" height="16" align="absmiddle" title="关闭"/>';
-   var close='<img id="dialogBoxClose" title="关闭" src=/wlgw/img/dialogclose.gif  />';
+   //var close='<input type="image" id="dialogBoxClose" src="'+path+'dialogclose.gif" border="0" width="16" height="16" align="absmiddle" title="鍏抽棴"/>';
+   var close='<img id="dialogBoxClose" title="鍏抽棴" src=/wlgw/img/dialogclose.gif  />';
    var cB='filter: alpha(opacity='+this.info.coverOpacity+');opacity:'+this.info.coverOpacity/100+';';
    var cover='<div id="dialogBoxBG" style="position:absolute;top:0px;left:0px;width:100%;height:100%;z-index:'+baseZIndex+';'+cB+'background-color:'+this.color.cColor+';display:none;"></div>';
    var mainBox='<div id="dialogBox" style="border:1px solid '+this.color.tColor+';display:none;z-index:'+showZIndex+';position:relative;width:'+this.config.width+'px;"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="'+this.color.bColor+'">';if(this.config.isHaveTitle){mainBox+='<tr height="24" bgcolor="'+this.color.tColor+'"><td><table style="-moz-user-select:none;height:24px;" width="100%" border="0" cellpadding="0" cellspacing="0" ><tr>'+'<td width="6" height="24"></td><td id="dialogBoxTitle" style="color:'+this.color.wColor+';font-size:14px;font-weight:bold;">'+this.info.title+'&nbsp;</td>'+'<td id="dialogClose" width="20" align="right" valign="middle">'+close+'</td><td width="6"></td></tr></table></td></tr>'}
@@ -146,8 +146,8 @@ build:function(){
    mainBox+='<tr style="height:'+this.config.height+'px" valign="top"><td id="dialogBody" style="position:relative;"></td></tr></table></div>'+'<div id="dialogBoxShadow" style="display:none;z-index:'+baseZIndex+';"></div>';
    if(!this.config.isBackgroundCanClick){G('dialogCase').innerHTML=cover+mainBox;G('dialogBoxBG').style.height=document.body.scrollHeight}
    else G('dialogCase').innerHTML=mainBox;Event.observe(G('dialogBoxClose'),"click",this.reset.bindAsEventListener(this),false);
-   if(this.config.isSupportDraging){dropClass=new Dragdrop(this.config.width,this.config.height,this.info.shadowWidth,this.config.isSupportDraging,this.config.contentType);G("dialogBoxTitle").style.cursor="move"};this.lastBuild()},lastBuild:function(){var confirm='<div style="width:100%;height:100%;text-align:center;"><div style="margin:20px 20px 0 20px;font-size:14px;line-height:16px;color:#000000;">'+this.info.confirmCon+'</div><div style="margin:20px;"><input id="dialogOk" type="button" value=" 确定 "/>&nbsp;<input id="dialogCancel" type="button" value=" 取消 "/></div></div>';
-   var alert='<div style="width:100%;height:100%;text-align:center;"><div style="margin:20px 20px 0 20px;font-size:14px;line-height:16px;color:#000000;">'+this.info.alertCon+'</div><div style="margin:20px;"><input id="dialogYES" type="button" value=" 确定 "/></div></div>';
+   if(this.config.isSupportDraging){dropClass=new Dragdrop(this.config.width,this.config.height,this.info.shadowWidth,this.config.isSupportDraging,this.config.contentType);G("dialogBoxTitle").style.cursor="move"};this.lastBuild()},lastBuild:function(){var confirm='<div style="width:100%;height:100%;text-align:center;"><div style="margin:20px 20px 0 20px;font-size:14px;line-height:16px;color:#000000;">'+this.info.confirmCon+'</div><div style="margin:20px;"><input id="dialogOk" type="button" value=" 纭畾 "/>&nbsp;<input id="dialogCancel" type="button" value=" 鍙栨秷 "/></div></div>';
+   var alert='<div style="width:100%;height:100%;text-align:center;"><div style="margin:20px 20px 0 20px;font-size:14px;line-height:16px;color:#000000;">'+this.info.alertCon+'</div><div style="margin:20px;"><input id="dialogYES" type="button" value=" 纭畾 "/></div></div>';
    var baseZIndex=10001+this.info.overlay*10;var coverIfZIndex=baseZIndex+4;
    if(this.config.contentType==1){var openIframe="<iframe width='100%' style='height:"+this.config.height+"px' name='"+this.iframeIdName+"' id='"+this.iframeIdName+"' src='"+this.info.contentUrl+"' frameborder='0' scrolling='"+this.config.scrollType+"'></iframe>";
    var coverIframe="<div id='iframeBG' style='position:absolute;top:0px;left:0px;width:1px;height:1px;z-index:"+coverIfZIndex+";filter: alpha(opacity=00);opacity:0.00;background-color:#ffffff;'><div>";G("dialogBody").innerHTML=openIframe+coverIframe}
@@ -156,7 +156,7 @@ build:function(){
    var oDialog=G('dialogBox');
    oDialog['style']['position']="absolute";
    oDialog['style']['display']='';
-   //取得页面的宽度和高度
+   //鍙栧緱椤甸潰鐨勫搴﹀拰楂樺害
    var sClientWidth=document.body.clientWidth;
    var sClientHeight=document.body.clientHeight;
    var sScrollTop=document.body.scrollTop;
@@ -165,8 +165,8 @@ build:function(){
    var iTop=-80+(sClientHeight/2+sScrollTop)-(oDialog.offsetHeight/2);
    var sTop=iTop>0?iTop:(sClientHeight/2+sScrollTop)-(oDialog.offsetHeight/2);
    if(sTop<1)sTop="20";if(sleft<1)sleft="20";
-   oDialog['style']['left']=sleft+"px"; //左侧位置
-   oDialog['style']['top']=220+"px"     //顶部位置
+   oDialog['style']['left']=sleft+"px"; //宸︿晶浣嶇疆
+   oDialog['style']['top']=220+"px"     //椤堕儴浣嶇疆
    },
    reset:function(){if(this.config.isReloadOnClose){top.location.reload()};this.close()},close:function(){G('dialogBox').style.display='none';
    if(!this.config.isBackgroundCanClick)G('dialogBoxBG').style.display='none';

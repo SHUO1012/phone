@@ -41,7 +41,7 @@
 			 document.getElementById("indicator").style.display="block";/*获取indicator加载图标*/
 			 loginService.login(document.ThisForm.userName.value,document.ThisForm.userPw.value,0,callback);
 		}
-		
+		 
 		function callback(data)
 		{
 		    document.getElementById("indicator").style.display="none";

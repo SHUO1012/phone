@@ -1,5 +1,5 @@
 /*
- * æ‰“å¼€æ–°çª—å£ f:é“¾æ¥åœ°å€ n:çª—å£çš„åç§° w:çª—å£çš„å®½åº¦ h:çª—å£çš„é«˜åº¦ s:çª—å£æ˜¯å¦æœ‰æ»šåŠ¨æ¡ï¼Œ1ï¼šæœ‰æ»šåŠ¨æ¡ï¼›0ï¼šæ²¡æœ‰æ»šåŠ¨æ¡
+ * ´ò¿ªĞÂ´°¿Ú f:Á´½ÓµØÖ· n:´°¿ÚµÄÃû³Æ w:´°¿ÚµÄ¿í¶È h:´°¿ÚµÄ¸ß¶È s:´°¿ÚÊÇ·ñÓĞ¹ö¶¯Ìõ£¬1£ºÓĞ¹ö¶¯Ìõ£»0£ºÃ»ÓĞ¹ö¶¯Ìõ
  */
 
 
@@ -34,7 +34,7 @@ function openWin(f, n, w, h, s)
 
 
 /*
- * åˆ é™¤è®°å½•
+ * É¾³ı¼ÇÂ¼
  */
 function del(url, info) 
 {
@@ -63,7 +63,7 @@ function del(url, info)
 
 
 /*
- * æ ¡éªŒcheckbox
+ * Ğ£Ñécheckbox
  */
 function checkAll(chkName, checkboxName, pageSize) {
 	var src = event.srcElement;
@@ -107,7 +107,7 @@ function makePages(maxPage, selectedPage, selectName) {
 
 
 /*
- * æ›¿æ¢å­—ç¬¦ä¸²
+ * Ìæ»»×Ö·û´®
  */
 function replaceStr(str) {
 	var re = "/( )/gi";
@@ -119,7 +119,7 @@ function replaceStr(str) {
 }
 
 /*
- * å»æ‰å·¦è¾¹ç©ºæ ¼
+ * È¥µô×ó±ß¿Õ¸ñ
  */
 function LTrim(str) {
 	var whitespace = new String(" \t\n\r");
@@ -135,7 +135,7 @@ function LTrim(str) {
 }
 
 /*
- * å»æ‰å³è¾¹ç©ºæ ¼
+ * È¥µôÓÒ±ß¿Õ¸ñ
  */
 function RTrim(str) {
 	var whitespace = new String(" \t\n\r");
@@ -151,7 +151,7 @@ function RTrim(str) {
 }
 
 /*
- * å»æ‰ä¸¤è¾¹ç©ºæ ¼
+ * È¥µôÁ½±ß¿Õ¸ñ
  */
 function Trim(str) {
 	return RTrim(LTrim(str));
@@ -195,7 +195,7 @@ function exeValidate(exePath) {
 
 
 /*
- * æ˜¾ç¤º
+ * ÏÔÊ¾
  */
 function validate_date(exePath) {
 	var obj = new ActiveXObject("Microsoft.XMLHTTP");
@@ -212,14 +212,14 @@ function validate_date(exePath) {
 }
 
 /*
- * æ ¡éªŒæ˜¯å¦æ•°å­—
+ * Ğ£ÑéÊÇ·ñÊı×Ö
  */
 function checkNumber(name, TempS) {
 	for (Count = 0; Count < TempS.length; Count++) {
 		TempChar = TempS.substring(Count, Count + 1);
 		RefString = "0123456789";
 		if (RefString.indexOf(TempChar, 0) == -1) {
-			alert("è¯·è¾“å…¥æ•°å­—");
+			alert("ÇëÊäÈëÊı×Ö");
 			eval("document.all." + name).focus();
 			return false;
 		}
@@ -229,7 +229,7 @@ function checkNumber(name, TempS) {
 
 
 /*
- * æ˜¯å¦æœ‰éæ³•å­—ç¬¦
+ * ÊÇ·ñÓĞ·Ç·¨×Ö·û
  */
 function chksafe(a) {
 	fibdn = new Array("'", "\\");
@@ -303,7 +303,7 @@ function chkElements(name, errMsg, max_length, lengthMsg) {
 
 
 /*
- * æ ¡éªŒç©ºå­—ç¬¦ä¸²
+ * Ğ£Ñé¿Õ×Ö·û´®
  */
 function checkNullStr(name, msg) {
 	var el_name = eval("document.all." + name);
@@ -319,7 +319,7 @@ function checkNullStr(name, msg) {
 
 
 /*
- *  æ˜¾ç¤ºæ—¥æœŸæ§jian
+ *  ÏÔÊ¾ÈÕÆÚ¿Øjian
  */
 function GetDate(nText, para) {
 	var v_url = para == "1" ? "./common/data.html" : "../../common/data.html";
@@ -337,7 +337,7 @@ function GetDate(nText, para) {
 
 
 /*
- * æŒ‰æ¯”ä¾‹ç¼©å°å›¾ç‰‡
+ * °´±ÈÀıËõĞ¡Í¼Æ¬
  */
 function DrawImage(ImgD, iwidth, iheight) {
 	var flag = false;
@@ -353,7 +353,7 @@ function DrawImage(ImgD, iwidth, iheight) {
 				ImgD.width = image.width;
 				ImgD.height = image.height;
 			}
-			// ImgD.alt=image.width+"Ã—"+image.height;
+			// ImgD.alt=image.width+"¡Á"+image.height;
 		} else {
 			if (image.height > iheight) {
 				ImgD.height = iheight;
@@ -362,7 +362,7 @@ function DrawImage(ImgD, iwidth, iheight) {
 				ImgD.width = image.width;
 				ImgD.height = image.height;
 			}
-			// ImgD.alt=image.width+"Ã—"+image.height;
+			// ImgD.alt=image.width+"¡Á"+image.height;
 		}
 	}
 	ImgD.style.visibility = "visible";
@@ -371,7 +371,7 @@ function DrawImage(ImgD, iwidth, iheight) {
 
 
 /*
- * å›è½¦é”®è½¬ä¸ºTabé”®
+ * »Ø³µ¼ü×ªÎªTab¼ü
  */
 function enterTab() {
 	if (event.keyCode == 13) {
@@ -397,8 +397,8 @@ function objectEval(text) {
 
 
 /*
- * æ‰“å¼€é¢†å¯¼æŸ¥è¯¢é¡µé¢ action - æŸ¥è¯¢çš„Action method - è°ƒç”¨çš„æ–¹æ³• title - æ ‡é¢˜message name -
- * å‘˜å·¥é€‰æ‹©åŸŸçš„name
+ * ´ò¿ªÁìµ¼²éÑ¯Ò³Ãæ action - ²éÑ¯µÄAction method - µ÷ÓÃµÄ·½·¨ title - ±êÌâmessage name -
+ * Ô±¹¤Ñ¡ÔñÓòµÄname
  */
 function openLeaderQuery(action, method, title, name) {
 	openWin("../../common/selectStaff.jsp?action=" + action + "&method="
@@ -407,7 +407,7 @@ function openLeaderQuery(action, method, title, name) {
 }
 
 /*
- * ç¬¬ä¸€è¡Œå˜è‰²
+ * µÚÒ»ĞĞ±äÉ«
  */
 function chgColor() {
 	var v_table = document.all["PowerTable"];
@@ -420,7 +420,7 @@ function chgColor() {
 }
 
 /*
- * ç¬¬ä¸€è¡Œå˜è‰²
+ * µÚÒ»ĞĞ±äÉ«
  */
 function chgColor2() {
 	var v_table = document.all["PowerTable"];
@@ -454,7 +454,7 @@ function chgColor2() {
 
 
 /*
- * æ·»åŠ é¡µé¢è½½å…¥åè§¦å‘çš„shijian
+ * Ìí¼ÓÒ³ÃæÔØÈëºó´¥·¢µÄshijian
  */
 function addLoadEvent(func) {
 	var oldonload = window.onload;
@@ -470,7 +470,7 @@ function addLoadEvent(func) {
 
 
 
-// adsName:åç§°,adsUrl:åœ°å€,sTime:æ—¶é—´(å°æ—¶) add by wujie 2005.12.12
+// adsName:Ãû³Æ,adsUrl:µØÖ·,sTime:Ê±¼ä(Ğ¡Ê±) add by wujie 2005.12.12
 function PopAds(adsName, adsUrl, sTime, number, w, h, s) {
 	if (document.cookie.indexOf(adsName) == -1) {
 		window.open(adsUrl, adsName);
