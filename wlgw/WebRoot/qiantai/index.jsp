@@ -105,15 +105,6 @@ String path = request.getContextPath();
 </div>
 </div>
 <!--body-->
-	
-	
-	
-<!--foot -->	
-<div align="center" class="Wrapper">
-	<div id="footer" align="center" class="Footer">
-		 <jsp:include flush="true" page="/qiantai/inc/incFoot.jsp"></jsp:include>
-	</div>
-</div>
-<!--foot -->	
+
 </body>
 </html>
